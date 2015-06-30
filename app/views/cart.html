@@ -1,0 +1,18 @@
+<div ng-controller='CartCtrl'>
+  <h1>Cart</h1>
+  <div class="row" ng-repeat='product in cart' >
+    <div class="col-lg-3" >
+      <div href="#" class="thumbnail">
+        <img ng-src='{{ product.image }}' alt="...">
+      </div>
+    </div>
+    <div class="col-lg-9" >
+      <h4>{{ product.name }} <small class="pull-right">{{ (product.price * product.quantite) | currency}}</small></h4>
+      <p class="pull-right">
+        <a ng-click='incrementQuantite(product)' class="btn btn-default"> + </a>
+        {{ product.quantite }}
+        <a ng-click='decrementQuantite(product)' class="btn btn-default"> - </a>
+      </p>
+    </div>
+  </div>
+</div>
