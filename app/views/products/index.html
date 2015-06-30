@@ -1,0 +1,11 @@
+<div class='row' ng-controller='ListCtrl'>
+  <div class='col-lg-3' ng-repeat='product in products'>
+    <div class="product">
+      <div ng-class='thumbnail' ng-mouseover='thumbnailhover()' ng-mouseleave='thumbnailleave()'>
+        <img ng-src='{{ product.image }}'  class="img-responsive">
+      </div>
+      <p class="title"> {{ product.name }} <span class="price pull-right"> {{ product.price | currency: 'R$ ' }}<span></title>
+      <a ng-href='#/cart/{{ product.id }}' class="btn btn-primary btn-block">Comprar</a>
+    </div>
+  </div>
+</div>
